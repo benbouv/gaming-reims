@@ -372,7 +372,7 @@ section.banner {
 
 
 .banner .banner-caption {
-  padding: 200px 0px;
+  padding: 25px;
 }
 
 .banner-secondary .banner-caption {
@@ -1255,7 +1255,7 @@ footer .contact-info ul li a {
 @media (max-width:992px) {
 
   .banner .banner-caption {
-    padding: 200px 30px;
+    padding: 25px;
   }
 
   .banner-secondary .banner-caption {

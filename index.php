@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Quizz Gaming Reims</title>
+        <title>Quizz Game in Reims</title>
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -88,16 +88,12 @@
         </header>
     </div>
       
-    <section class="banner" id="top" style="background-image: url(img/homepage-banner-image-1920x700.jpg);">
+    <section class="banner" id="top">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="banner-caption">
-                        <div class="line-dec"></div>
-                        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h2>
-                        <div class="blue-button">
-                            <a href="contact.html">Contact Us</a>
-                        </div>
+                        <h2>Bienvenue à la Game'in Reims !</h2>
                     </div>
                 </div>
             </div>
@@ -105,29 +101,21 @@
     </section>
 
     <main>
-        <section class="our-services">
+    <section class="our-services">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
                         <div class="left-content">
                             <br>
-                            <h4>About us</h4>
-                            <p>Aenean hendrerit metus leo, quis viverra purus condimentum nec. Pellentesque a sem semper, lobortis mauris non, varius urna. Quisque sodales purus eu tellus fringilla.<br><br>Mauris sit amet quam congue, pulvinar urna et, congue diam. Suspendisse eu lorem massa. Integer sit amet posuere tellus, id efficitur leo. In hac habitasse platea dictumst. Vel sequi odit similique repudiandae ipsum iste, quidem tenetur id impedit, eaque et, aliquam quod.</p>
-                            <div class="blue-button">
-                                <a href="about-us.html">Discover More</a>
-                            </div>
+                            <h4>Règles du jeu :</h4>
+                            <p>Ce jeu vous est proposé par un groupe d'étudiant du pole UIMM formation EPSI</p>
 
-                            <br>
+                            <p>Il vous suffit d'utiliser votre appareil photo ou une application QR reader, puis de scanner les différents QR code selon un ordre qui vous sera donné.<br><br>A chaque stand vous dévrez répondre à une série de questions puis vous devrez vous rendre au stand suivant indiqué sur le plan.</p>
                         </div>
-                    </div>
-                    <div class="col-md-5">
-                        <img src="img/about-1-720x480.jpg" class="img-fluid" alt="">
                     </div>
                 </div>
             </div>
         </section>
-
-
         <section class="popular-places">
             <div class="container">
                 <div class="contact-content">
@@ -147,11 +135,6 @@
                                     </div>
                                     <div class="col-md-12">
                                       <fieldset>
-                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
-                                      </fieldset>
-                                    </div>
-                                    <div class="col-md-12">
-                                      <fieldset>
                                         <div class="blue-button">
                                             <a href="#" id="form-submit" class="btn">Send Message</a>
                                         </div>
@@ -164,85 +147,13 @@
                 </div>
             </div>
         </section>
-        
-
-        <section id="video-container">
-            <div class="video-overlay"></div>
-            <div class="video-content">
-                <div class="inner">
-                      <div class="section-heading">
-                          <span>Contact Us</span>
-                          <h2>Vivamus nec vehicula felis</h2>
-                      </div>
-                      <!-- Modal button -->
-
-                      <div class="blue-button">
-                        <a href="contact.html">Talk to us</a>
-                      </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="about-veno">
-                        <div class="logo">
-                            <img src="img/footer_logo.png" alt="Venue Logo">
-                        </div>
-                        <p>Mauris sit amet quam congue, pulvinar urna et, congue diam. Suspendisse eu lorem massa. Integer sit amet posuere tellustea dictumst.</p>
-                        <ul class="social-icons">
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="useful-links">
-                        <div class="footer-heading">
-                            <h4>Useful Links</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <ul>
-                                    <li><a href="inde.html"><i class="fa fa-stop"></i>Home</a></li>
-                                    <li><a href="about.html"><i class="fa fa-stop"></i>About</a></li>
-                                    <li><a href="contact.html"><i class="fa fa-stop"></i>Contact Us</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <ul>
-                                    <li><a href="team.html"><i class="fa fa-stop"></i>Authors</a></li>
-                                    <li><a href="blog.html"><i class="fa fa-stop"></i>Blog</a></li>
-                                    <li><a href="terms.html"><i class="fa fa-stop"></i>Terms</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="contact-info">
-                        <div class="footer-heading">
-                            <h4>Contact Information</h4>
-                        </div>
-                        <p><i class="fa fa-map-marker"></i> 212 Barrington Court New York, ABC</p>
-                        <ul>
-                            <li><span>Phone:</span><a href="#">+1 333 4040 5566</a></li>
-                            <li><span>Email:</span><a href="#">contact@company.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
     </footer>
 
     <div class="sub-footer">
-        <p>Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
+        <p>Copyright © 2022 UIMM - EPSI</p>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>
