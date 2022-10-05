@@ -177,6 +177,7 @@ section {
 #primary-nav li > a:hover,
 #primary-nav li.selected > a {
   color: #4883ff;
+  border-bottom: 1px solid #ddd;
 }
 
 .sub-menu {
@@ -187,6 +188,7 @@ section {
   line-height: 50px!important;
   font-size: 13px!important;
   color: #7a7a7a;
+  border-bottom: 1px solid #ddd;
 }
 
 .downarrow {
@@ -283,6 +285,7 @@ section {
 
 #primary-nav.mobile li:last-child {
   border: none;
+  border-bottom: 1px solid #ddd;
 }
 
 

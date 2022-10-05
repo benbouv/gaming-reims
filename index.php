@@ -18,54 +18,11 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        <script>
-            const options = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0
-          };
-          
-          function success(pos) {
-            const crd = pos.coords;
-          
-            console.log('Your current position is:');
-            console.log(`Latitude : ${crd.latitude}`);
-            console.log(`Longitude: ${crd.longitude}`);
-            console.log(`More or less ${crd.accuracy} meters.`);
-            document.cookie = `latitude=${crd.latitude}`;
-            document.cookie = `longitude=${crd.longitude}`;
-          }
-          
-          function error(err) {
-            console.warn(`ERROR(${err.code}): ${err.message}`);
-          }
-          
-          navigator.geolocation.getCurrentPosition(success, error, options);
-          
-          </script>
     </head>
 
 <body>
-<?php
-    
-    if (isset($_COOKIE["latitude"]) && isset($_COOKIE["longitude"])) {
-        $lat = $_COOKIE["latitude"];
-        $long = $_COOKIE["longitude"];
-
-        $min_lat = 49.224958;
-        $min_long = 4.053502;
-
-        $max_lat = 49.240803;
-        $max_long = 4.064688;
-
-
-        if (($min_lat < $lat) && ($lat < $max_lat) && ($min_long < $long) && ($long< $max_long)) {
-            echo "<h1>You are in Gaming Reims !</h1>";
-        } else {
-            echo "<h1>You are too far from Gaming Reims !</h1>";
-        }
-    } 
-?>
+    <div id="permission">
+    </div>
     <div class="wrap">
         <header id="header">
             <div class="container">
@@ -164,5 +121,52 @@
     <script src="js/datepicker.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        const options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+
+        lat = null;
+        long = null;
+        
+        function success(pos) {
+            const crd = pos.coords;
+        
+            console.log('Your current position is:');
+            console.log(`Latitude : ${crd.latitude}`);
+            console.log(`Longitude: ${crd.longitude}`);
+            console.log(`More or less ${crd.accuracy} meters.`);
+            //document.cookie = `latitude=${crd.latitude}`;
+            //document.cookie = `longitude=${crd.longitude}`;
+            lat = crd.latitude;
+            long = crd.longitude;
+            min_lat = 49.224958;
+            min_long = 4.053502;
+
+            max_lat = 49.240803;
+            max_long = 4.064688;
+
+            if (lat !== null && long !== null) {
+                if ((min_lat > lat) && (lat < max_lat) && (min_long > long) && (long < max_long)) {
+                    //echo ("<h1>You are in Gaming Reims !</h1>");
+                    //document.cookie = `isAllowed=true`;
+                    document.getElementById("permission").innerHTML ="You are in Game in Reims !";
+                } else {
+                    //echo ("<h1>You are too far from Gaming Reims !</h1>");
+                    //document.cookie = `isAllowed=false`;
+                    document.getElementById("permission").innerHTML ="You are not in Game in Reims ! Sorry...";
+                }
+            }
+        }
+        
+        function error(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+        
+        navigator.geolocation.getCurrentPosition(success, error, options);
+
+    </script>
 </body>
 </html>
