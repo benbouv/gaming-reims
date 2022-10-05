@@ -29,14 +29,16 @@
                 <div class="row">
                     <div class="col-md-12">
                         <button id="primary-nav-button" type="button">Menu</button>
-                        <a href="index.php"><div class="logo">
-                            <img src="img/LOGO_UIMM.png" alt="Venue Logo">
-                        </div></a>
+                        <a href="index.php">
+                            <div class="logo">
+                                <img src="img/LOGO_UIMM.png" alt="Venue Logo">
+                            </div>
+                        </a>
                         <nav id="primary-nav" class="dropdown cf">
                             <ul class="dropdown menu">
                                 <li class='active'><a href="index.php">Home</a></li>
-
                                 <li><a href="about-us.html">About Us</a></li>
+                                <li><a href="QR.html">Scanner les QR codes</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -142,14 +144,15 @@
             //document.cookie = `longitude=${crd.longitude}`;
             lat = crd.latitude;
             long = crd.longitude;
+
             min_lat = 49.224958;
-            min_long = 4.053502;
+            min_long = 4.033502;
 
             max_lat = 49.240803;
-            max_long = 4.064688;
+            max_long = 4.084688;
 
             if (lat !== null && long !== null) {
-                if ((min_lat > lat) && (lat < max_lat) && (min_long > long) && (long < max_long)) {
+                if ((min_lat < lat) && (lat < max_lat) && (min_long < long) && (long < max_long)) {
                     //echo ("<h1>You are in Gaming Reims !</h1>");
                     //document.cookie = `isAllowed=true`;
                     document.getElementById("permission").innerHTML ="You are in Game in Reims !";
