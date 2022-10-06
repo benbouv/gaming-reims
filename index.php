@@ -38,7 +38,7 @@
                             <ul class="dropdown menu">
                                 <li class='active'><a href="index.php">Home</a></li>
                                 <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="QR.html">Scanner les QR codes</a></li>
+                                <li><a href="QR.php">Scanner les QR codes</a></li>
                             </ul>
                         </nav>
                     </div>

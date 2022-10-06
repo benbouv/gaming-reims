@@ -35,7 +35,7 @@
                             <ul class="dropdown menu">
                                 <li><a href="index.php">Home</a></li>
                                 <li class='active'><a href="about-us.html">About Us</a></li>
-                                <li><a href="QR.html">Scanner les QR codes</a></li>
+                                <li><a href="QR.php">Scanner les QR codes</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -43,21 +43,35 @@
             </div>
         </header>
     </div>
-      
-
-    <main>
-        <section>
-            <div class="container-video" id="container">
-                <video autoplay="true" class="videoElement" id="videoElement">
-                </video>
-            </div>
-        </section>
-    </main>
+    <script src="js/html5-qrcode.min.js"></script>
+    <section class="qr-reader">
+        <div class="row">
+        <div class="col">
+            <div style="width:500px;" id="reader"></div>
+        </div>
+        <div class="col">
+            <h4>SCAN RESULT</h4>
+            <div id="result">Result Here</div>
+        </div>
+        </div>
+    </section>
+    
+    <script type="text/javascript">
+        function onScanSuccess(qrCodeMessage) {
+            document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+        }
+        function onScanError(errorMessage) {
+        //handle scan error
+        }
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess, onScanError);
+    </script>
 
     <div class="sub-footer">
         <p>Copyright © 2020 UIMM - EPSI</p>
     </div>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
