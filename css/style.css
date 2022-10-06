@@ -120,9 +120,9 @@ section {
 .x-logo {
   font-size: 50px;
   color: #000000;
-  margin-top: 40px;
-  margin-left:10px;
-  margin-right:5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
 /* Header Style */
@@ -195,12 +195,12 @@ section {
 #header .logo {
   float: left;
   display:flex;
+  width: 60vw;
+  height: 12vh;
 }
 
 #header .logo img {
-  width: 100%;
   overflow: hidden;
-  width: 160px;
 }
 
 .menu {

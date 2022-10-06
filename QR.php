@@ -49,7 +49,7 @@
     <section class="qr-reader">
         <div class="row">
         <div class="col">
-            <div style="width:500px; background-color: white;" id="reader"></div>
+            <div style="width: 70vw; background-color: white;" id="reader"></div>
         </div>
         <div class="col">
             <h4>SCAN RESULT</h4>
