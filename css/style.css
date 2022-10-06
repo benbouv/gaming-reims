@@ -125,6 +125,11 @@ section {
   margin-right: 5px;
 }
 
+.permission {
+  margin: 10%;
+  font-size: 40px;
+}
+
 /* Header Style */
 
 .cf:before, 
