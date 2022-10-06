@@ -1,6 +1,6 @@
 body {
   font-family: 'Raleway', 'sans-serif';
-  background-color: #fff;
+  background-color: #de6181;
 }
 
 ul {
@@ -10,10 +10,11 @@ ul {
 }
 
 p {
-  font-size: 14px;
-  color: #7a7a7a;
-  line-height: 24px;
-  left: 0.25px;
+  font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 24px;
+    left: 0.25px;
 }
 
 section {
@@ -116,6 +117,14 @@ section {
   padding-top: 20px;
 }
 
+.x-logo {
+  font-size: 50px;
+  color: #000000;
+  margin-top: 40px;
+  margin-left:10px;
+  margin-right:5px;
+}
+
 /* Header Style */
 
 .cf:before, 
@@ -136,7 +145,8 @@ section {
 #header {
   overflow: visible;
   position: relative;
-  background-color: #fff;
+  background-color: #de6181;
+  margin-top: 25px;
 }
 
 
@@ -184,12 +194,13 @@ section {
 
 #header .logo {
   float: left;
+  display:flex;
 }
 
 #header .logo img {
   width: 100%;
   overflow: hidden;
-  width: 125px;
+  width: 160px;
 }
 
 .menu {
@@ -407,7 +418,6 @@ section.banner {
   left: 0; 
   right: 0; 
   bottom: 0; 
-  background-color: rgba(0,0,0,.3); 
   z-index: 1;
   border-radius: 5px;
 }
@@ -537,6 +547,10 @@ section.banner {
   color: #4883ff;
 }
 
+section.our-services {
+  background-color: #de6181;
+}
+
 section.our-services .service-item {
   text-align: center;
   border: 1px solid #ddd;
@@ -557,11 +571,12 @@ section.our-services .service-item h4 {
 }
 
 .our-services .left-content h4 {
-  font-size:  19px;
-  font-weight:  600;
-  color:  #232323;
+  font-size: 30px;
+  font-weight: 600;
+  color: #ffffff;
   margin-top: 0px;
-  margin-bottom:  25px;
+  margin-bottom: 25px;
+
 }
 
 .our-services .left-content .blue-button {
@@ -994,7 +1009,6 @@ textarea.form-control {
 
 footer {
   padding: 80px 0px 70px 0px;
-  border-top: 1px solid #ddd;
 }
 
 footer .footer-heading h4 {
@@ -1083,12 +1097,13 @@ footer .contact-info ul li a {
 .sub-footer p {
   text-align: center;
   display: inline-block;
-  background-color: #f4f4f4;
+  background-color: #de6181;
   width: 100%;
   margin-bottom: 0px;
   padding: 30px 0px;
   font-size: 15px;
   color: #aaaaaa;
+  border-top: 1px solid #7a7a7a;
 }
 
 .sub-footer a {

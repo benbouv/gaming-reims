@@ -29,13 +29,15 @@
                     <div class="col-md-12">
                         <button id="primary-nav-button" type="button">Menu</button>
                         <a href="index.php"><div class="logo">
+                            <img src="img/logo_gameinreims.png" alt="Venue Logo">
+                            <div class="x-logo">X</div>
                             <img src="img/LOGO_UIMM.png" alt="Venue Logo">
                         </div></a>
                         <nav id="primary-nav" class="dropdown cf">
                             <ul class="dropdown menu">
                                 <li><a href="index.php">Home</a></li>
-                                <li class='active'><a href="about-us.html">About Us</a></li>
-                                <li><a href="QR.php">Scanner les QR codes</a></li>
+                                <!--<li class='active'><a href="about-us.html">About Us</a></li>-->
+                                <li><a href="QR.php">Scanner QR code</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -47,7 +49,7 @@
     <section class="qr-reader">
         <div class="row">
         <div class="col">
-            <div style="width:500px;" id="reader"></div>
+            <div style="width:500px; background-color: white;" id="reader"></div>
         </div>
         <div class="col">
             <h4>SCAN RESULT</h4>

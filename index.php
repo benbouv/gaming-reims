@@ -31,14 +31,16 @@
                         <button id="primary-nav-button" type="button">Menu</button>
                         <a href="index.php">
                             <div class="logo">
+                                <img src="img/logo_gameinreims.png" alt="Venue Logo">
+                                <div class="x-logo">X</div>
                                 <img src="img/LOGO_UIMM.png" alt="Venue Logo">
                             </div>
                         </a>
                         <nav id="primary-nav" class="dropdown cf">
                             <ul class="dropdown menu">
                                 <li class='active'><a href="index.php">Home</a></li>
-                                <li><a href="about-us.html">About Us</a></li>
-                                <li><a href="QR.php">Scanner les QR codes</a></li>
+                                <!--<li><a href="about-us.html">About Us</a></li>-->
+                                <li><a href="QR.php">Scanner QR code</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -70,12 +72,13 @@
                             <p>Ce jeu vous est proposé par un groupe d'étudiant du pole UIMM formation EPSI</p>
 
                             <p>Il vous suffit d'utiliser votre appareil photo ou une application QR reader, puis de scanner les différents QR code selon un ordre qui vous sera donné.<br><br>A chaque stand vous dévrez répondre à une série de questions puis vous devrez vous rendre au stand suivant indiqué sur le plan.</p>
+                            <p>RDV au premier stand pour scanner le 1er QR code ! (aller dans Menu --> Scanner QR code)</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="popular-places">
+        <!--<section class="popular-places">
             <div class="container">
                 <div class="contact-content">
                     <div class="row">
@@ -105,7 +108,7 @@
                     </div>      
                 </div>
             </div>
-        </section>
+        </section>-->
     </main>
 
     <footer>
@@ -155,11 +158,11 @@
                 if ((min_lat < lat) && (lat < max_lat) && (min_long < long) && (long < max_long)) {
                     //echo ("<h1>You are in Gaming Reims !</h1>");
                     //document.cookie = `isAllowed=true`;
-                    document.getElementById("permission").innerHTML ="You are in Game in Reims !";
+                    //document.getElementById("permission").innerHTML ="You are in Game in Reims !";
                 } else {
                     //echo ("<h1>You are too far from Gaming Reims !</h1>");
                     //document.cookie = `isAllowed=false`;
-                    document.getElementById("permission").innerHTML ="You are not in Game in Reims ! Sorry...";
+                    //document.getElementById("permission").innerHTML ="You are not in Game in Reims ! Sorry...";
                 }
             }
         }
