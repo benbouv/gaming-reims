@@ -54,20 +54,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <button id="primary-nav-button" type="button">Menu</button>
-                        <a href="index.php">
-                            <div class="logo">
-                                <img src="img/logo_gameinreims.png" alt="Venue Logo">
-                                <div class="x-logo">X</div>
-                                <img src="img/LOGO_UIMM.png" alt="Venue Logo">
-                            </div>
-                        </a>
-                        <nav id="primary-nav" class="dropdown cf">
-                            <ul class="dropdown menu">
-                                <li class='active'><a href="index.php">Home</a></li>
-                                <!--<li><a href="about-us.html">About Us</a></li>-->
-                                <li><a href="QR.php">Scanner QR code</a></li>
-                            </ul>
-                        </nav>
+                        
+                        <div class="logo">
+                            <img src="img/logo_gameinreims.png" alt="Venue Logo">
+                            <div class="x-logo">X</div>
+                            <img src="img/LOGO_UIMM.png" alt="Venue Logo">
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -94,46 +87,62 @@
                         <div class="left-content">
                             <br>
                             <h4>Règles du jeu :</h4>
-                            <p>Ce jeu vous est proposé par un groupe d'étudiant du pole UIMM formation EPSI</p>
-
-                            <p>Il vous suffit d'utiliser votre appareil photo ou une application QR reader, puis de scanner les différents QR code selon un ordre qui vous sera donné.<br><br>A chaque stand vous dévrez répondre à une série de questions puis vous devrez vous rendre au stand suivant indiqué sur le plan.</p>
-                            <p>RDV au premier stand pour scanner le 1er QR code ! (aller dans Menu --> Scanner QR code)</p>
+                            <p>Ce jeu vous est proposé par un groupe d'étudiant du pole UIMM formation EPSI. C'est un quizz thématique qui vous permettra de gagner peut-être un lot !</p><br>
+                            <p>Différents QR code vous seront proposés à travers les différents stands, à vous d'aller les scanner dans le bon ordre et de repondre aux questions<br></p>
+                            <p>Pour commencer, veuillez remplir le formulaire ci-dessous avec vos informations de contact</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!--<section class="popular-places">
+        <section class="popular-places">
             <div class="container">
                 <div class="contact-content">
                     <div class="row">
                         <div class="col-md-8"> 
                             <div class="left-content">
                                 <div class="row">
-                                    <div class="col-md-6">
-                                      <fieldset>
-                                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
-                                      </fieldset>
-                                    </div>
-                                     <div class="col-md-6">
-                                      <fieldset>
-                                        <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject..." required="">
-                                      </fieldset>
-                                    </div>
-                                    <div class="col-md-12">
-                                      <fieldset>
-                                        <div class="blue-button">
-                                            <a href="#" id="form-submit" class="btn">Send Message</a>
+                                    <form action="QR.php" method="post">
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <input name="lastname" type="text" class="form-control" id="lastame" placeholder="nom..." required="required">
+                                            </fieldset>
                                         </div>
-                                      </fieldset>
-                                    </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <input name="surname" type="text" class="form-control" id="surname" placeholder="prénom..." required="required">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <input name="mail" type="email" class="form-control" id="email" placeholder="email..." required="required">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <input name="tel" type="tel" class="form-control" id="tel" placeholder="numéro de téléphone..." required="required">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <fieldset>
+                                                <input name="study" type="text" class="form-control" id="study" placeholder="niveau d'étude..." required="required">
+                                            </fieldset>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <fieldset>
+                                                <div class="blue-button">
+                                                    <input href="QR.php" type="submit" id="form-submit" class="btn">
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>      
                 </div>
             </div>
-        </section>-->
+        </section>
     </main>
 
     <footer>

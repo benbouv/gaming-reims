@@ -28,24 +28,21 @@
                 <div class="row">
                     <div class="col-md-12">
                         <button id="primary-nav-button" type="button">Menu</button>
-                        <a href="index.php"><div class="logo">
+                        <div class="logo">
                             <img src="img/logo_gameinreims.png" alt="Venue Logo">
                             <div class="x-logo">X</div>
                             <img src="img/LOGO_UIMM.png" alt="Venue Logo">
-                        </div></a>
-                        <nav id="primary-nav" class="dropdown cf">
-                            <ul class="dropdown menu">
-                                <li><a href="index.php">Home</a></li>
-                                <!--<li class='active'><a href="about-us.html">About Us</a></li>-->
-                                <li><a href="QR.php">Scanner QR code</a></li>
-                            </ul>
-                        </nav>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
     </div>
     <script src="js/html5-qrcode.min.js"></script>
+    <section class="game-rule">
+        <p>Bonjour <?php echo $_POST["surname"]; ?> !<br></p>
+        <p>Pour jouer il te suffit de scanner le QR code avec la camera ci-dessous</p>
+    </section>
     <section class="qr-reader">
         <div class="row">
         <div class="col">

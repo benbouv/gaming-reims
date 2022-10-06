@@ -45,7 +45,7 @@ section {
 }
 
 
-.blue-button a {
+.blue-button input {
   display: inline-block;
   background-color: #4883ff;
   color: #fff;
@@ -57,7 +57,7 @@ section {
   transition: all 0.5s;
 }
 
-.blue-button a:hover {
+.blue-button input:hover {
   background-color: transparent;
   color: #4883ff;
 }
@@ -128,6 +128,10 @@ section {
 .permission {
   margin: 10%;
   font-size: 40px;
+}
+
+section.game-rule {
+  margin-left: 25px;
 }
 
 /* Header Style */
@@ -1186,5 +1190,5 @@ main > section {
 }
   
 main > section:nth-child(even) { 
-  background: #f8f8f8; 
+  background: #de6181!important;
 }

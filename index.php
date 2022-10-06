@@ -77,7 +77,7 @@
                     //echo ("<h1>You are in Gaming Reims !</h1>");
                     //document.cookie = `isAllowed=true`;
                     //document.getElementById("permission").innerHTML ="You are in Game in Reims !";
-                    window.location.href = "home.html";
+                    window.location.href = "home.php";
                     setCookie("Allowed", "true", 1);
                 } else {
                     //echo ("<h1>You are too far from Gaming Reims !</h1>");
