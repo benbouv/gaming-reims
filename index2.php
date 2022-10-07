@@ -15,7 +15,7 @@
 <?php
 if (isset($_POST['mail'])){
 $mail = $_POST['mail'];
-$numbers = range(1, 10);
+$numbers = range(1, 5);
 shuffle($numbers);
 $mysqli=mysqli_connect('localhost','root','root','GR');
 $i = 0;
