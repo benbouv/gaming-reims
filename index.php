@@ -28,11 +28,11 @@
             timeout: 5000,
             maximumAge: 0
         };
-        function setCookie(name,value,days) {
+        function setCookie(name,value,hours) {
             var expires = "";
-            if (days) {
+            if (hours) {
                 var date = new Date();
-                date.setTime(date.getTime() + (days*24*60*60*1000));
+                date.setTime(date.getTime() + (hours*60*60*1000));
                 expires = "; expires=" + date.toUTCString();
             }
             document.cookie = name + "=" + (value)  + expires + "; path=/";
@@ -78,12 +78,12 @@
                     //document.cookie = `isAllowed=true`;
                     //document.getElementById("permission").innerHTML ="You are in Game in Reims !";
                     window.location.href = "home.php";
-                    setCookie("Allowed", "true", 1);
+                    setCookie("Allowed", "true", 0.25);
                 } else {
                     //echo ("<h1>You are too far from Gaming Reims !</h1>");
                     //document.cookie = `isAllowed=false`;
                     document.getElementById("permission").innerHTML ="You are not in Game in Reims ! Sorry you cannot play...";
-                    setCookie("Allowed", "false", 1);
+                    setCookie("Allowed", "false", 0.25);
                 }
             }
         }

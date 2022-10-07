@@ -19,15 +19,6 @@
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script>
-            function setCookie(name,value,days) {
-                var expires = "";
-                if (days) {
-                    var date = new Date();
-                    date.setTime(date.getTime() + (days*24*60*60*1000));
-                    expires = "; expires=" + date.toUTCString();
-                }
-                document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-            }
             function getCookie(name) {
                 var nameEQ = name + "=";
                 var ca = document.cookie.split(';');
@@ -40,7 +31,7 @@
             }
             cookieAllowed = getCookie("Allowed");
             console.log(cookieAllowed);
-            if (cookieAllowed == "false") {
+            if (cookieAllowed == "false" || cookieAllowed == undefined) {
                 window.location.href = "index.php";
             }
 
@@ -160,53 +151,5 @@
     <script src="js/datepicker.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        const options = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0
-        };
-
-        lat = null;
-        long = null;
-        
-        function success(pos) {
-            const crd = pos.coords;
-        
-            console.log('Your current position is:');
-            console.log(`Latitude : ${crd.latitude}`);
-            console.log(`Longitude: ${crd.longitude}`);
-            console.log(`More or less ${crd.accuracy} meters.`);
-            //document.cookie = `latitude=${crd.latitude}`;
-            //document.cookie = `longitude=${crd.longitude}`;
-            lat = crd.latitude;
-            long = crd.longitude;
-
-            min_lat = 49.224958;
-            min_long = 4.033502;
-
-            max_lat = 49.240803;
-            max_long = 4.084688;
-
-            if (lat !== null && long !== null) {
-                if ((min_lat < lat) && (lat < max_lat) && (min_long < long) && (long < max_long)) {
-                    //echo ("<h1>You are in Gaming Reims !</h1>");
-                    //document.cookie = `isAllowed=true`;
-                    //document.getElementById("permission").innerHTML ="You are in Game in Reims !";
-                } else {
-                    //echo ("<h1>You are too far from Gaming Reims !</h1>");
-                    //document.cookie = `isAllowed=false`;
-                    //document.getElementById("permission").innerHTML ="You are not in Game in Reims ! Sorry...";
-                }
-            }
-        }
-        
-        function error(err) {
-            console.warn(`ERROR(${err.code}): ${err.message}`);
-        }
-        
-        navigator.geolocation.getCurrentPosition(success, error, options);
-
-    </script>
 </body>
 </html>

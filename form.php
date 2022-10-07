@@ -13,7 +13,7 @@
         $mysqli=mysqli_connect('localhost','root','root','GR');
         $sql=mysqli_query($mysqli,'SELECT question.libelle as ql, question.id as qid FROM question ORDER BY RAND () limit 4');}
         catch(Exception $e) {
-}
+    }
 ?>
            <form method="post" action="form.php">
 <?php

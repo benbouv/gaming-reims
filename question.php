@@ -55,35 +55,63 @@
             </div>
         </header>
     </div>
-    <script src="js/html5-qrcode.min.js"></script>
-    <section class="game-rule">
-        <p>Bonjour <?php echo $_POST["surname"]; ?> !<br></p>
-        <p>Pour jouer il te suffit de scanner le QR code avec le lecteur ci-dessous</p>
-    </section>
-    <section class="qr-reader">
-        <div class="row">
-        <div class="col">
-            <div style="width: 70vw; background-color: white;" id="reader"></div>
-        </div>
-        <div class="col">
-            <h4>SCAN RESULT</h4>
-            <div id="result">Result Here</div>
-        </div>
-        </div>
-    </section>
-    
-    <script type="text/javascript">
-        function onScanSuccess(qrCodeMessage) {
-            document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
-            window.location.href = "question.php?param="+qrCodeMessage;
+    <?php
+        $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $url_components = parse_url($url);
+        if (isset($url_components['query'])) {
+            parse_str($url_components['query'], $params);
+            $stand_id = $params['param'];
         }
-        function onScanError(errorMessage) {
-        //handle scan error
+    ?>
+    <?php
+        
+        $mysqli=mysqli_connect('localhost', 'root','', 'GR');
+        if (!$mysqli) {
+            die("Connection failed: " . mysqli_connect_error());
         }
-        var html5QrcodeScanner = new Html5QrcodeScanner(
-            "reader", { fps: 10, qrbox: 250 });
-        html5QrcodeScanner.render(onScanSuccess, onScanError);
-    </script>
+        if (isset($stand_id)) {
+            $sql=mysqli_query($mysqli,'SELECT question.libelle as ql, question.id as qid FROM question WHERE question.pool = \''.$stand_id.'\' ORDER BY RAND () limit 4');
+        }
+    ?>
+    <main>
+        <section class="our-services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="left-content">
+                            <form action="question.php" method="post" id="quiz">
+                                <ol>
+                                    <li>
+                                        <?php
+                                            if (isset($sql)) {
+                                                if($sql->num_rows > 0){ 
+                                                    while($row = $sql->fetch_assoc()){
+                                        ?>
+                                        <h3><?php echo $row['ql']?></h3>
+                                        <?php
+                                            $sql2=mysqli_query($mysqli,'SELECT reponse.id_question as ridq, reponse.libelle as rl FROM reponse where reponse.id_question ='.$row['qid'].'');
+                                            if (isset($sql2)) {
+                                                while($row2 = $sql2->fetch_assoc()) {
+                                        ?>
+                                        <div>
+                                            <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                                            <label for="question-1-answers-A"><?php echo $row2['rl']?></label>
+                                        </div>
+                                        <?php }}}}}?>
+                                    </li>
+                                </ol>
+                                <input type="submit" value="Submit" class="submitbtn" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        
+    </main>
 
     <div class="sub-footer">
         <p>Copyright © 2020 UIMM - EPSI</p>
@@ -97,25 +125,5 @@
     <script src="js/datepicker.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        var video = document.querySelector("#videoElement");
-        video.setAttribute('playsinline', '');
-        video.setAttribute('autoplay', '');
-        video.setAttribute('muted', '');
-
-        /* Setting up the constraint */
-        var facingMode = "environment"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
-        var constraints = {
-            audio: false,
-            video: {
-                facingMode: facingMode
-            }
-        };
-
-        /* Stream it to video element */
-        navigator.mediaDevices.getUserMedia(constraints).then(function success(stream) {
-            video.srcObject = stream;
-        });
-    </script>
 </body>
 </html>
