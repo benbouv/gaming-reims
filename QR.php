@@ -59,9 +59,10 @@
     <section class="game-rule">
         <?php
             $mysqli=mysqli_connect('localhost', 'root','', 'GR');
-            if (isset($_COOKIE["ordre"])) {
+            if (isset($_COOKIE["ordre"]) && isset($_COOKIE["addrmail"])) {
                 $ordre = $_COOKIE["ordre"];
-                $sql2=mysqli_query($mysqli,'SELECT resultat.stand as rs FROM resultat WHERE resultat.ordre = \''.$ordre.'\'');
+                $mail_user = $_COOKIE["addrmail"];
+                $sql2=mysqli_query($mysqli,'SELECT resultat.stand as rs FROM resultat WHERE resultat.ordre = \''.$ordre.'\' AND resultat.addrmail = \''.$mail_user.'\'');
                 if(isset($sql2)){
                     if($sql2->num_rows > 0){ 
                         while($row = $sql2->fetch_assoc()){
