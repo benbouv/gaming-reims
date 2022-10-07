@@ -57,8 +57,17 @@
     </div>
     <script src="js/html5-qrcode.min.js"></script>
     <section class="game-rule">
-        <p>Bonjour <?php echo $_POST["surname"]; ?> !<br></p>
-        <p>Pour jouer il te suffit de scanner le QR code avec le lecteur ci-dessous</p>
+        <?php
+            $mysqli=mysqli_connect('localhost', 'root','', 'GR');
+            if (isset($_COOKIE["ordre"])) {
+                $ordre = $_COOKIE["ordre"];
+                $sql2=mysqli_query($mysqli,'SELECT resultat.stand as rs FROM resultat WHERE resultat.ordre = \''.$ordre.'\'');
+                if(isset($sql2)){
+                    if($sql2->num_rows > 0){ 
+                        while($row = $sql2->fetch_assoc()){
+        ?>
+        <p>Pour jouer il te suffit de scanner le QR code du stand n°<?php echo $row['rs']?> avec le lecteur ci-dessous</p>
+        <?php }}}}?>
     </section>
     <section class="qr-reader">
         <div class="row">

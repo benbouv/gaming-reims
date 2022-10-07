@@ -1,3 +1,10 @@
+<?php
+    if (isset($_POST['email'])) {
+        setcookie("addrmail", $_POST['email']);
+        setcookie("ordre", 1);
+        header("Refresh: 0; url=QR.php");
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -93,7 +100,7 @@
                         <div class="col-md-8"> 
                             <div class="left-content">
                                 <div class="row">
-                                    <form action="QR.php" method="post">
+                                    <form action="home.php" method="post">
                                         <div class="col-md-6">
                                             <fieldset>
                                                 <input name="lastname" type="text" class="form-control" id="lastame" placeholder="nom..." required="required">
@@ -106,7 +113,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <fieldset>
-                                                <input name="mail" type="email" class="form-control" id="email" placeholder="email..." required="required">
+                                                <input name="email" type="email" class="form-control" id="email" placeholder="email..." required="required">
                                             </fieldset>
                                         </div>
                                         <div class="col-md-6">
@@ -122,7 +129,7 @@
                                         <div class="col-md-12">
                                             <fieldset>
                                                 <div class="blue-button">
-                                                    <input href="QR.php" type="submit" id="form-submit" class="btn">
+                                                    <input type="submit" id="form-submit" class="btn">
                                                 </div>
                                             </fieldset>
                                         </div>
@@ -134,6 +141,23 @@
                 </div>
             </div>
         </section>
+        <?php
+            if (isset($_POST['email'])) {
+                $mail = $_POST['email'];
+                $numbers = range(1, 5);
+                shuffle($numbers);
+                $mysqli=mysqli_connect('localhost','root','','GR');
+                $i = 0;
+                foreach (array_slice($numbers,0,5) as $number) {
+                    $i++;
+                    if ($sql=mysqli_query($mysqli,"INSERT INTO resultat (addrmail, stand, ordre) value ('$mail', '$number', '$i')")) {
+                        //printf("Record inserted successfully.<br />");
+                    } else {
+                        echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
+                    }
+                }
+            }
+        ?>
     </main>
 
     <footer>
